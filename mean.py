@@ -18,11 +18,13 @@ def get_input(n, a, h, sd):
 
 
 def mean(n, a, h, sd, value):
-    sd = sqrt((n / (n + 1)) * (pow(sd, 2) + (pow(value - a, 2) / (n + 1))))
-    a = (a * n + value) / (n + 1)
     n += 1
     h = n / ((1 / value) + ((n - 1) / h))
-    print_all(n, a, h, sd, 0)
+    exisquare = (n - 1) * (pow(sd, 2) + pow(a, 2))
+    rms = sqrt((exisquare + pow(value, 2)) / n)
+    a = (a * n + value) / (n + 1)
+    sd = sqrt((n / (n + 1)) * (pow(sd, 2) + (pow(value - a, 2) / (n + 1))))
+    print_all(n, a, h, sd, rms)
     return n, a, h, sd
 
 
