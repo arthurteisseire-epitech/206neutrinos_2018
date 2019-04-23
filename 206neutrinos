@@ -2,4 +2,7 @@
 
 from parse import parse_arguments
 
-args = parse_arguments()
+try:
+    args = parse_arguments()
+except:
+    exit(84)
