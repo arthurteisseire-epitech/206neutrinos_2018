@@ -13,5 +13,15 @@ def get_input(n, a, h, sd):
 
 
 def mean(n, a, h, sd, value):
-    print(value)
+    n += 1
+    print_all(n, a, h, sd)
     return n, a, h, sd
+
+
+def print_all(n, a, h, sd):
+    print("\tNumber of values:\t%d" % n)
+    print("\tStandard deviation:\t%d" % sd)
+    print("\tArithmetic mean:\t%d" % a)
+    print("\tRoot mean square:\t0")
+    print("\tHarmonic mean:\t\t%d" % h)
+    print("")
