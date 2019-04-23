@@ -19,6 +19,7 @@ def mean(n, a, h, sd, value):
     sd = sqrt((n / (n + 1)) * (pow(sd, 2) + (pow(value - a, 2) / (n + 1))))
     a = (a * n + value) / (n + 1)
     n += 1
+    h = n / ((1 / value) + ((n - 1) / h))
     print_all(n, a, h, sd, 0)
     return n, a, h, sd
 
