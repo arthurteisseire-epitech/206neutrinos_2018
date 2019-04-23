@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 
 from parse import parse_arguments
+from mean import algo
 
 try:
     args = parse_arguments()
+    algo(args.n, args.a, args.h, args.sd)
+except Exception as e:
+    print(e)
 except:
     exit(84)
