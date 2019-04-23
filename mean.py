@@ -8,6 +8,8 @@ def algo(n, a, h, sd):
 
 def get_input(n, a, h, sd):
     value = input("Enter next value: ")
+    if value == "END":
+        raise Exception
     try:
         return mean(n, a, h, sd, int(value))
     except ValueError as e:
