@@ -20,10 +20,10 @@ def get_input(n, a, h, sd):
 def mean(n, a, h, sd, value):
     n += 1
     h = n / ((1 / value) + ((n - 1) / h))
-    exisquare = (n - 1) * (pow(sd, 2) + pow(a, 2))
-    rms = sqrt((exisquare + pow(value, 2)) / n)
     a = (a * n + value) / (n + 1)
     sd = sqrt((n / (n + 1)) * (pow(sd, 2) + (pow(value - a, 2) / (n + 1))))
+    exisquare = (n - 1) * (pow(sd, 2) + pow(a, 2))
+    rms = sqrt((exisquare + pow(value, 2)) / n)
     print_all(n, a, h, sd, rms)
     return n, a, h, sd
 
